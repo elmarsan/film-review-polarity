@@ -2,6 +2,8 @@ from pydantic import BaseModel, Field
 
 
 class ReviewDTO(BaseModel):
+    """ReviewDTO public data of review record"""
+
     film_name: str = Field(description="Film name")
     review_name: str = Field(description="Review name")
     body: str = Field(description="Review text")
