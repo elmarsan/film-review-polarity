@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import Optional
 
 from .review import Review
 
@@ -7,4 +8,9 @@ class ReviewQueryRepository(ABC):
 
     @abstractmethod
     def find_all() -> list[Review]:
+        raise NotImplementedError
+    
+
+    @abstractmethod
+    def find_by_id(id: int) -> Optional[Review]:
         raise NotImplementedError
