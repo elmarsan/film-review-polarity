@@ -12,7 +12,7 @@ class ReviewFinderService:
 
     def find_by_id(self, id: int) -> Optional[ReviewDTO]:
         review = self.query_repository.find_by_id(id)
-        return review.to_review_dto()
+        return review.to_review_dto() if review else None
 
 
     def find_all(self) -> list[ReviewDTO]:
