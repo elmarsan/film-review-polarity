@@ -1,8 +1,8 @@
-from domain.review_command_repository import ReviewCommandRepository
-from domain.review_create_dto import ReviewCreateDTO
-from domain.review_dto import ReviewDTO
-from domain.review import Review
-from domain.prediction_model import PredictionModel
+from app.domain.review_command_repository import ReviewCommandRepository
+from app.domain.review_create_dto import ReviewCreateDTO
+from app.domain.review_dto import ReviewDTO
+from app.domain.review import Review
+from app.domain.prediction_model import PredictionModel
 
 
 class ReviewCreatorService:

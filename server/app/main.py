@@ -3,17 +3,17 @@ from fastapi.testclient import TestClient
 from fastapi import FastAPI, Path
 import pytest
 
-from domain.review_create_dto import ReviewCreateDTO
-from domain.review_dto import ReviewDTO
-from database import Session, init_database
-from domain.review_fix_score_dto import ReviewSetUserScoreDTO
-from application.review_finder_service import ReviewFinderService
-from application.review_user_score_updater_service import ReviewUserScoreUpdateService
-from application.review_creator_service import ReviewCreatorService
-from infrastructure.sqlite_review_query_repository import SqliteReviewQueryRepository
-from infrastructure.sqlite_review_command_repository import SqliteReviewCommandRepository
-from infrastructure.keras_prediction_model import KerasPredictionModel
-from mocks.review_random_factory import ReviewRandomFactory
+from app.domain.review_create_dto import ReviewCreateDTO
+from app.domain.review_dto import ReviewDTO
+from app.database import Session, init_database
+from app.domain.review_fix_score_dto import ReviewSetUserScoreDTO
+from app.application.review_finder_service import ReviewFinderService
+from app.application.review_user_score_updater_service import ReviewUserScoreUpdateService
+from app.application.review_creator_service import ReviewCreatorService
+from app.infrastructure.sqlite_review_query_repository import SqliteReviewQueryRepository
+from app.infrastructure.sqlite_review_command_repository import SqliteReviewCommandRepository
+from app.infrastructure.keras_prediction_model import KerasPredictionModel
+from app.mocks.review_random_factory import ReviewRandomFactory
 
 init_database()
 

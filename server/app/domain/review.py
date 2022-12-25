@@ -1,6 +1,6 @@
 from typing import Union
 
-from database import Base
+from app.database import Base
 from .review_dto import ReviewDTO
 from .review_create_dto import ReviewCreateDTO
 from sqlalchemy import Column, DateTime, Float, Integer, String, func

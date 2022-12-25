@@ -1,6 +1,6 @@
 from typing import Optional
-from domain.review_dto import ReviewDTO
-from domain.review_query_repository import ReviewQueryRepository
+from app.domain.review_dto import ReviewDTO
+from app.domain.review_query_repository import ReviewQueryRepository
 
 
 class ReviewFinderService:

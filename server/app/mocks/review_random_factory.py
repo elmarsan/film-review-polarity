@@ -3,7 +3,7 @@ import string
 from datetime import datetime
 from typing import Optional
 
-from domain.review import Review
+from app.domain.review import Review
 
 
 def random_string(size=10, chars=string.ascii_uppercase + string.digits):

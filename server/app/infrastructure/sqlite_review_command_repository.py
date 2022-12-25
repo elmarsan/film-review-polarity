@@ -1,5 +1,5 @@
-from domain.review_command_repository import ReviewCommandRepository
-from domain.review import Review
+from app.domain.review_command_repository import ReviewCommandRepository
+from app.domain.review import Review
 from sqlalchemy.orm.session import Session
 
 class SqliteReviewCommandRepository(ReviewCommandRepository):

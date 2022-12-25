@@ -1,7 +1,7 @@
 from fastapi import HTTPException
-from domain.review_query_repository import ReviewQueryRepository
-from domain.review_dto import ReviewDTO
-from domain.review_command_repository import ReviewCommandRepository
+from app.domain.review_query_repository import ReviewQueryRepository
+from app.domain.review_dto import ReviewDTO
+from app.domain.review_command_repository import ReviewCommandRepository
 
 
 class ReviewUserScoreUpdateService:

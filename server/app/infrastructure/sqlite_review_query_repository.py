@@ -1,8 +1,8 @@
 from typing import Optional
-from domain.review_query_repository import ReviewQueryRepository
+from app.domain.review_query_repository import ReviewQueryRepository
 from sqlalchemy.orm.session import Session
 
-from domain.review import Review
+from app.domain.review import Review
 
 class SqliteReviewQueryRepository(ReviewQueryRepository):
     """SqliteReviewQueryRepository implements ReviewQueryRepository with Sqlite"""
