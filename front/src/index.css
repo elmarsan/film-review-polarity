@@ -1,20 +1,33 @@
-html {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', serif;
-  border: 3px solid red;
+:root {
+  --bg_color: rgb(24, 26, 27);
+  --text_color: rgb(203, 198, 192);
+  --border_color: rgba(140, 130, 115, 0.13);
+  --header_color: rgb(178, 172, 162);
+}
+
+* {
   box-sizing: border-box;
 }
 
 body {
-  width: 100%;
-  height: 100%;
   margin: 0;
-  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Open Sans', serif;
+  background-color: var(--bg_color);
+  color: var(--text_color);
 }
 
-h1, h2, h3, h4, h5 {
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'Montserrat', serif;
+  color: var(--header_color);
 }

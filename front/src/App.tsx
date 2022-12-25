@@ -1,11 +1,9 @@
-import { FC } from "react";
+import { FC } from 'react';
+import Layout from './layout/layout';
 
 const App: FC = () => {
   return (
-    <div>
-      <h3>Yepale</h3>
-      Hello!
-    </div>
+    <Layout>App</Layout>
   );
 }
 
