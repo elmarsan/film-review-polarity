@@ -2,11 +2,13 @@ import unittest
 
 from domain.review_create_dto import ReviewCreateDTO
 from mocks.mock_repository import MockReviewCommandRepository
+from mocks.mock_prediction_model import MockPredictionModel
 
 from .review_creator_service import ReviewCreatorService
 
+prediction_model = MockPredictionModel()
 repository = MockReviewCommandRepository()
-service = ReviewCreatorService(repository)
+service = ReviewCreatorService(repository, prediction_model)
 
 
 class TestReviewCreatorService(unittest.TestCase):
@@ -31,3 +33,4 @@ class TestReviewCreatorService(unittest.TestCase):
         self.assertEqual(review.body, body)
         self.assertGreaterEqual(review.model_score, 0)
         self.assertLessEqual(review.model_score, 10)
+        self.assertGreaterEqual(review.model_score, 0)

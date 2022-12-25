@@ -12,6 +12,7 @@ from application.review_user_score_updater_service import ReviewUserScoreUpdateS
 from application.review_creator_service import ReviewCreatorService
 from infrastructure.sqlite_review_query_repository import SqliteReviewQueryRepository
 from infrastructure.sqlite_review_command_repository import SqliteReviewCommandRepository
+from infrastructure.keras_prediction_model import KerasPredictionModel
 from mocks.review_random_factory import ReviewRandomFactory
 
 init_database()
@@ -22,10 +23,11 @@ session = Session()
 
 query_repository = SqliteReviewQueryRepository(session)
 command_repository = SqliteReviewCommandRepository(session)
+prediction_model = KerasPredictionModel()
 
 review_finder_service = ReviewFinderService(query_repository)
 review_user_score_updater_service = ReviewUserScoreUpdateService(query_repository, command_repository)
-review_creator = ReviewCreatorService(command_repository)
+review_creator = ReviewCreatorService(command_repository, prediction_model)
 
 @app.post("/review", response_model=ReviewDTO, status_code=http.HTTPStatus.CREATED)
 async def create_review(create_review_dto: ReviewCreateDTO):

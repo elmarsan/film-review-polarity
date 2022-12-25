@@ -1,4 +1,3 @@
-import random
 from typing import Union
 
 from database import Base
@@ -40,6 +39,5 @@ class Review(Base):
             review_name= review_create_dto.review_name,
             body= review_create_dto.body,
             author= review_create_dto.author,
-            # Replace random score by model prediction
-            model_score= random.randint(0, 10)
+            model_score= 0
         )
