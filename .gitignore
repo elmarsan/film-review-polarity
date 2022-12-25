@@ -1,2 +1,8 @@
 __pycache__/
 *.py[cod]
+
+server/test.db
+
+front/node_modules
+front/pnpm-lock.yaml
+front/build
