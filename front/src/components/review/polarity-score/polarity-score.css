@@ -1,0 +1,146 @@
+.polarity-container {
+  --green_polarity: rgb(3, 136, 87);
+  --green_polarity_face: #16A34A;
+  --orange_polarity: rgb(204, 122, 0);
+  --red_polarity: rgb(169, 20, 9);
+  --red_polarity_face: #EF4444;
+
+  display: flex;
+  align-items: center;
+}
+
+.polarity-container i {
+  font-size: 2rem;
+}
+
+.polarity-happy-icon {
+  color: var(--green_polarity_face);
+}
+
+.polarity-sad-icon {
+  color: var(--red_polarity_face);
+}
+
+.polarity-bar {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+}
+
+.polarity-score {
+  border-radius: 100px;
+  height: 30px;
+  width: 0;
+}
+
+.red {
+  background: var(--red_polarity);
+}
+
+.green {
+  background: var(--green_polarity);
+}
+
+.orange {
+  background: var(--orange_polarity);
+}
+
+@keyframes load-10 {
+  0% { width: 0; }
+  100% { width: 10%; }
+}
+
+.load-10 {
+  animation: load-10 3s normal forwards;
+}
+
+@keyframes load-10 {
+  0% { width: 0; }
+  100% { width: 10%; }
+}
+
+.load-20 {
+  animation: load-20 3s normal forwards;
+}
+
+@keyframes load-20 {
+  0% { width: 0; }
+  100% { width: 20%; }
+}
+
+@keyframes load-30 {
+  0% { width: 0; }
+  100% { width: 30%; }
+}
+
+.load-30 {
+  animation: load-30 3s normal forwards;
+}
+
+@keyframes load-40 {
+  0% { width: 0; }
+  100% { width: 40%; }
+}
+
+.load-40 {
+  animation: load-40 3s normal forwards;
+}
+
+@keyframes load-50 {
+  0% { width: 0; }
+  100% { width: 50%; }
+}
+
+.load-50 {
+  animation: load-50 3s normal forwards;
+}
+
+@keyframes load-60 {
+  0% { width: 0; }
+  100% { width: 60%; }
+}
+
+.load-60 {
+  animation: load-60 3s normal forwards;
+}
+
+@keyframes load-70 {
+  0% { width: 0; }
+  100% { width: 70%; }
+}
+
+.load-70 {
+  animation: load-70 3s normal forwards;
+}
+
+@keyframes load-80 {
+  0% { width: 0; }
+  100% { width: 80%; }
+}
+
+.load-80 {
+  animation: load-80 3s normal forwards;
+}
+
+@keyframes load-90 {
+  0% { width: 0; }
+  100% { width: 90%; }
+}
+
+.load-90 {
+  animation: load-90 3s normal forwards;
+}
+
+@keyframes load-100 {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.load-100 {
+  animation: load-100 3s normal forwards;
+}
