@@ -1,0 +1,9 @@
+.review-list {
+    padding: 1.5rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.review-list .review-item {
+    margin-bottom: 1rem;
+}
