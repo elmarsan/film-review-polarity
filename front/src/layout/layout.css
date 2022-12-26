@@ -10,7 +10,15 @@
     border-bottom: 1px solid var(--border_color);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.header h2 {
+    margin-left: .5rem;
+}
+
+.header h3 {
+    margin-right: .5rem;
 }
 
 .main {
@@ -18,6 +26,7 @@
     overflow-y: scroll;
     display: flex;
     flex-flow: column;
+    padding: 1.5rem;
 }
 
 .footer {
@@ -29,7 +38,7 @@
     border-top: 1px solid var(--border_color);
 }
 
-.footer a {
+a {
     color: var(--text_color);
 }
 

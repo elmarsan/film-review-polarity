@@ -1,0 +1,39 @@
+.close-icon {
+    font-size: 28px;
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+}
+
+.close-icon:hover {
+    cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background-color: rgb(40,40,40);
+    margin-top: 0;
+    border-radius: .6rem;
+}
+
+.overlay-elias {
+    background-color: rgba(255, 255, 255, .40);
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+    }   
+    .close-icon {
+        position: absolute;
+        right: 1rem;
+        top: 2.8rem;
+    }    
+}

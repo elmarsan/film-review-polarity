@@ -1,24 +1,25 @@
-.container {
+.project-info {
     display: flex;
     flex-flow: column;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
-.review-form {
-    /* position: fi; */
+.project-info div {
+    width: 100%;
 }
 
-/* .column {
-    height: 100%;
-    flex: 100%; 
+.project-info button {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 14px 26px;
+    border-radius: 1rem;
+
+    border: 2px solid var(--border_color);
+    background-color: white;
 }
 
-@media (min-width: 768px) {
-    .column {
-        flex: 100%; 
-    }
+.project-info button:hover {
+    cursor: pointer;
+    background-color: var(--text_color);
 }
-
-.reviews {
-    display: flex;
-    flex-flow: column;
-} */

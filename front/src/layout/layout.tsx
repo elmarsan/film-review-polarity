@@ -5,6 +5,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => (
   <div className='layout'>
     <div className='header'>
       <h2>Film review polarity</h2>
+      <h3><a href="#">About project</a></h3>
     </div>
     <div className='main'>
       {children}
