@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  server:
+    build: server
+    environment:
+      - DATABASE_URL=sqlite:///../sqlite_volume/reviews.db
+    ports:
+      - "80:80"
+    volumes:
+      - sqlite_volume:/sqlite_volume
+
+  front:
+    build: front
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+
+volumes:
+  sqlite_volume:
+    name: sqlite_volume

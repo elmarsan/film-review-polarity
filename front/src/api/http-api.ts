@@ -11,7 +11,7 @@ interface ApiReviewDTOResponse {
 }
 
 export class HttpAPI {
-    private static url = 'http://localhost/review'
+    private static url = 'http://localhost/review';
 
     static async fetchReviews(): Promise<Array<Review>> {
         const response = await fetch(this.url);

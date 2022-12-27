@@ -1,7 +1,8 @@
 import http
+import pytest
 from fastapi.testclient import TestClient
 from fastapi import FastAPI, Path
-import pytest
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.domain.review_create_dto import ReviewCreateDTO
 from app.domain.review_dto import ReviewDTO
@@ -18,6 +19,14 @@ from app.mocks.review_random_factory import ReviewRandomFactory
 init_database()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 session = Session()
 
