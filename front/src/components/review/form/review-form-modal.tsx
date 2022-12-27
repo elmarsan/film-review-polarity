@@ -20,7 +20,7 @@ const ReviewFormModal: FC<Props> = ({
             style={{ overlay: { backgroundColor: 'rgba(255, 255, 255, .40)' }}}
         >
             <i className="fa-solid fa-x close-icon" onClick={onClose}></i>
-            <ReviewForm/>
+            <ReviewForm onSubmit={onClose}/>
         </Modal>
     );
 };

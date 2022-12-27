@@ -2,19 +2,38 @@ import { FC, useState } from 'react';
 import './review-form.css';
 import FormInput from '../../form/form-input';
 import FormTextarea from '../../form/form-textarea';
+import { HttpAPI } from '../../../api/http-api';
 
-const ReviewForm: FC = () => {
+interface Props {
+  onSubmit: () => void;
+}
+
+const ReviewForm: FC<Props> = ({ onSubmit }) => {
     const [film, setFilm] = useState('');
     const [author, setAuthor] = useState('');
-    const [title, setTitle] = useState('');
+    const [name, setName] = useState('');
     const [body, setBody] = useState('');
   
-    const enabled = film && title && body && body.length > 50;
+    const enabled = film && name && body && body;
+
+    const handleSubmit = () => {
+      HttpAPI.createReview({
+        film,
+        author,
+        name,
+        body
+      });
+
+      onSubmit();
+    };
 
     return (
         <div className='review-form'>
             <h2>Write your review (Spanish)</h2>
-            <form>
+            <form onSubmit={(e) => {
+              e.preventDefault()
+              handleSubmit();
+            }}>
                 <FormInput  
                   value={film}
                   onChange={(value) => setFilm(value)}
@@ -25,8 +44,8 @@ const ReviewForm: FC = () => {
                 />
 
                 <FormInput  
-                  value={title}
-                  onChange={(value) => setTitle(value)}
+                  value={name}
+                  onChange={(value) => setName(value)}
                   type='text'
                   placeholder='Otro gran film de mafia'
                   label='Review title'
@@ -50,13 +69,7 @@ const ReviewForm: FC = () => {
                   required={true}
                 />
 
-                <button 
-                    type='submit' 
-                    onSubmit={(e) => console.log('submit')}
-                    disabled={!enabled}
-                >
-                    Send
-                </button>
+                <button type='submit' disabled={!enabled}>Send</button>
             </form>
         </div>
     );

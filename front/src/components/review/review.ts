@@ -7,3 +7,10 @@ export interface Review {
     userScore?: number;
     date: Date;
 }
+
+export interface ReviewCreateDTO {
+    film: string;
+    name: string;
+    body: string;
+    author: string;
+}
