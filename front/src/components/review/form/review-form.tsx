@@ -3,6 +3,7 @@ import './review-form.css';
 import FormInput from '../../form/form-input';
 import FormTextarea from '../../form/form-textarea';
 import { HttpAPI } from '../../../api/http-api';
+import { toast } from 'react-toastify';
 
 interface Props {
   onSubmit: () => void;
@@ -16,13 +17,20 @@ const ReviewForm: FC<Props> = ({ onSubmit }) => {
   
     const enabled = film && name && body && body;
 
-    const handleSubmit = () => {
-      HttpAPI.createReview({
-        film,
-        author,
-        name,
-        body
-      });
+    const handleSubmit = async () => {
+      await toast.promise(
+        HttpAPI.createReview({
+          film,
+          author,
+          name,
+          body
+        }),
+        {
+          pending: 'Creating review...',
+          success: 'Review created successfully',
+          error: 'Error while creating review'
+        }
+    );
 
       onSubmit();
     };
