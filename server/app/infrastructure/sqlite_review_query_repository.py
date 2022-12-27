@@ -11,7 +11,7 @@ class SqliteReviewQueryRepository(ReviewQueryRepository):
         self.session: Session = session
 
     def find_all(self) -> list[Review]:
-        return self.session.query(Review).all()
+        return self.session.query(Review).order_by(Review.created_at.desc()).all()
 
     def find_by_id(self, id: int) -> Optional[Review]:
         return self.session.query(Review).filter_by(id = id).one_or_none()

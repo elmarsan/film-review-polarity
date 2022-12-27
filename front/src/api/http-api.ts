@@ -7,7 +7,7 @@ interface ApiReviewDTOResponse {
     author: string;
     model_score: number;
     user_score: number;
-    date: Date;
+    date: string;
 }
 
 export class HttpAPI {

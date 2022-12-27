@@ -14,11 +14,11 @@
 }
 
 .header h2 {
-    margin-left: .5rem;
+    margin-left: 1rem;
 }
 
 .header h3 {
-    margin-right: .5rem;
+    margin-right: 1rem;
 }
 
 .main {
@@ -26,7 +26,6 @@
     overflow-y: scroll;
     display: flex;
     flex-flow: column;
-    padding: 1.5rem;
 }
 
 .footer {

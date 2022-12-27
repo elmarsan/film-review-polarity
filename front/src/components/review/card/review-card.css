@@ -1,4 +1,7 @@
 .review-card {
+    --green_polarity_face: #16A34A;
+    --red_polarity_face: #EF4444;  
+
     background-color: rgb(40,40,40);
     border-radius: .5rem;
     padding: 1rem;
@@ -46,8 +49,20 @@
     margin-right: 1rem;
 }
 
-.review-card-footer-header span {
-    margin-left: .2rem;
+.review-card-footer-header i {
+  font-size: 3rem;
+}
+
+.polarity-happy-icon {
+    color: var(--green_polarity_face);
+}
+
+.polarity-sad-icon {
+    color: var(--red_polarity_face);
+}
+
+.review-card-footer-header h4 {
+    margin-right: .5rem;
 }
 
 span {

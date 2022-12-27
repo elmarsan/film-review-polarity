@@ -38,8 +38,6 @@ class KerasPredictionModel:
         review_topics = self.__fetch_topics(review_tokens)
 
         prediction = self.model.predict(self.__pad_sequences(review_topics))
-
-        print(prediction[0][0], prediction[0][0] * 10)
         return round(prediction[0][0] * 10, 1)
 
     def __remove_accents(self, review_body):
@@ -51,8 +49,8 @@ class KerasPredictionModel:
         tokens = re.split(r"([-\s.,;!¡'¿?+:)(*@#\"])+", review_body)
         return [char.lower() for char in tokens if char != '' and char not in "- \t\n.,;!¡¿?+:()*@#\""]
 
-    def __remove_stop_words(self, review_body):
-        return [word.lower() for word in review_body if word not in STOP]
+    def __remove_stop_words(self, review_tokens):
+        return [word.lower() for word in review_tokens if word not in STOP]
 
     def __pad_sequences(self, sequences, dimension=TOPICS):
         results = np.zeros((len(sequences), dimension))

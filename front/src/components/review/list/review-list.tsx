@@ -1,19 +1,13 @@
-import { FC, useEffect, useState } from 'react';
-import { HttpAPI } from '../../../api/http-api';
+import { FC } from 'react';
 import ReviewCard from '../card/review-card';
 import { Review } from '../review';
 import './review-list.css';
 
+interface Props {
+    reviews: Array<Review>
+}
 
-const ReviewList: FC = () => {
-    const [reviews, setReviews] = useState<Array<Review>>([]);
-    
-    useEffect(() => {
-        HttpAPI
-        .fetchReviews()
-        .then((reviewList) => setReviews(reviewList));
-      }, [])
-    
+const ReviewList: FC<Props> = ({ reviews }) => {
     return (
         <div className='review-list'>
         {

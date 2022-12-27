@@ -1,8 +1,13 @@
 .project-info {
+    --header_bg_color: rgb(28, 31, 32);
+    
     display: flex;
     flex-flow: column;
     align-items: center;
     margin-bottom: 1rem;
+
+    background-color: var(--header_bg_color);
+    padding: 1.5rem;
 }
 
 .project-info div {

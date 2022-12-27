@@ -1,18 +1,28 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { HttpAPI } from './api/http-api';
 import './app.css';
 import ReviewFormModal from './components/review/form/review-form-modal';
 import ReviewList from './components/review/list/review-list';
+import { Review } from './components/review/review';
 import Layout from './layout/layout';
 
 
 const App: FC = () => {
   const [showReviewModal, setShowReviewModal] = useState(false);
-
+  const [reviews, setReviews] = useState<Array<Review>>([]);
+    
+  useEffect(() => {
+      HttpAPI
+      .fetchReviews()
+      .then((reviewList) => setReviews(reviewList));
+    }, [])
+  
   return (
     <Layout>
       <ReviewFormModal
         show={showReviewModal}
         onClose={() => setShowReviewModal(false)}
+        onCreate={(review) => setReviews([review, ...reviews])}
       />
 
       <div className='project-info'>
@@ -27,7 +37,7 @@ const App: FC = () => {
         <button type='button' onClick={() => setShowReviewModal(true)}>Write review</button>
       </div>
 
-      <ReviewList />
+      <ReviewList reviews={reviews}/>
     </Layout>
   );
 }

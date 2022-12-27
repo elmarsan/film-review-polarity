@@ -5,7 +5,7 @@ export interface Review {
     author: string;
     modelScore: number;
     userScore?: number;
-    date: Date;
+    date: string;
 }
 
 export interface ReviewCreateDTO {

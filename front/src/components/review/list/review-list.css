@@ -1,6 +1,7 @@
 .review-list {
     display: flex;
     flex-flow: column;
+    padding: 1.5rem;
 }
 
 .review-list .review-item {

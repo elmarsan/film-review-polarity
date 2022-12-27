@@ -4,9 +4,10 @@ import FormInput from '../../form/form-input';
 import FormTextarea from '../../form/form-textarea';
 import { HttpAPI } from '../../../api/http-api';
 import { toast } from 'react-toastify';
+import { Review } from '../review';
 
 interface Props {
-  onSubmit: () => void;
+  onSubmit: (review: Review) => void;
 }
 
 const ReviewForm: FC<Props> = ({ onSubmit }) => {
@@ -18,7 +19,7 @@ const ReviewForm: FC<Props> = ({ onSubmit }) => {
     const enabled = film && name && body && body;
 
     const handleSubmit = async () => {
-      await toast.promise(
+      const review = await toast.promise(
         HttpAPI.createReview({
           film,
           author,
@@ -32,7 +33,7 @@ const ReviewForm: FC<Props> = ({ onSubmit }) => {
         }
     );
 
-      onSubmit();
+      onSubmit(review);
     };
 
     return (
