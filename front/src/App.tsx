@@ -31,7 +31,7 @@ const App: FC = () => {
           <p>You might be wondering what is it about. Here you can write in Spanish language some film review. Behind this page there is a deep learning model that would try to do it best for figure out how positive/negative is your sentiment.</p>
           <p>I invite you to try it, notice that the model will have a better performance the more words your review has.</p>
           <p>
-            <a href='#'>More about project...</a>
+            <a href='https://elmarsan.github.io/website/pages/film-review-polarity.html'>More about project...</a>
           </p>
         </div>
         <button type='button' onClick={() => setShowReviewModal(true)}>Write review</button>
