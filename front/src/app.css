@@ -28,3 +28,7 @@
     cursor: pointer;
     background-color: var(--text_color);
 }
+
+.last-reviews h2 {
+    text-align: center;
+}

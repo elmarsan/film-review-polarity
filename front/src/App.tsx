@@ -16,7 +16,7 @@ const App: FC = () => {
       .fetchReviews()
       .then((reviewList) => setReviews(reviewList));
     }, [])
-  
+
   return (
     <Layout>
       <ReviewFormModal
@@ -37,7 +37,10 @@ const App: FC = () => {
         <button type='button' onClick={() => setShowReviewModal(true)}>Write review</button>
       </div>
 
-      <ReviewList reviews={reviews}/>
+      <div className="last-reviews">
+        <h2>Latest reviews</h2>
+        <ReviewList reviews={reviews}/>
+      </div>
     </Layout>
   );
 }
